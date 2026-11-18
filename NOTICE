@@ -1,0 +1,22 @@
+Reverse Engineer Growth
+=======================
+
+Copyright (c) 2026 Ventaja / Raymundo Díaz Flores
+
+This project is released under the MIT License (see LICENSE).
+
+Brand attribution
+-----------------
+"Ventaja" and the IAC (Índice de Automatización de Crecimiento) are part of the
+Ventaja line of work (https://ventaja.com.mx · https://iac.ventaja.com.mx).
+
+When you distribute this software or substantial portions of it, keep this NOTICE
+and the MIT copyright notice. You may say the tool is "based on Reverse Engineer
+Growth by Ventaja"; you may not imply Ventaja endorses your fork's commercial
+offers unless agreed in writing.
+
+What is open vs productized
+---------------------------
+Open: CLI, schemas, public PRINCIPLES.md, harness v0 rules, example readouts.
+Productized (not fully open-sourced here): dense L3 criterion packs, full IAC
+instrument scoring, paid lever audits, client delivery templates, pricing.

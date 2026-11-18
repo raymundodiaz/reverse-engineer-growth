@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GrowthScorecard",
+  "type": "object",
+  "required": [
+    "offer_clarity",
+    "owner_dependence_proxy",
+    "demand_engine",
+    "conversion_friction",
+    "proof_trust",
+    "focus_vs_menu",
+    "system_vs_tactics"
+  ],
+  "properties": {
+    "offer_clarity": { "$ref": "#/$defs/dim" },
+    "owner_dependence_proxy": { "$ref": "#/$defs/dim" },
+    "demand_engine": { "$ref": "#/$defs/dim" },
+    "conversion_friction": { "$ref": "#/$defs/dim" },
+    "proof_trust": { "$ref": "#/$defs/dim" },
+    "focus_vs_menu": { "$ref": "#/$defs/dim" },
+    "system_vs_tactics": { "$ref": "#/$defs/dim" }
+  },
+  "$defs": {
+    "dim": {
+      "type": "object",
+      "required": ["status", "note"],
+      "properties": {
+        "status": { "enum": ["strong", "mixed", "weak", "unknown"] },
+        "note": { "type": "string" },
+        "sources": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

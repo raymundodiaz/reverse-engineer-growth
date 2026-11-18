@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GrowthSystemMap",
+  "type": "object",
+  "required": ["attraction", "conversion", "delivery", "retention", "cash"],
+  "properties": {
+    "attraction": { "type": "string" },
+    "conversion": { "type": "string" },
+    "delivery": { "type": "string" },
+    "retention": { "type": "string" },
+    "cash": { "type": "string" },
+    "flow_one_liner": { "type": "string" }
+  }
+}
