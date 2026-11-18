@@ -1,6 +1,6 @@
 [project]
 name = "reverse-engineer-growth"
-version = "0.1.0"
+version = "0.2.0"
 description = "Reverse engineer growth systems: one lever, not forty tactics. By Ventaja."
 readme = "README.md"
 license = { text = "MIT" }

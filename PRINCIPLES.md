@@ -3,6 +3,8 @@
 Public subset of Ventaja / Raymundo growth criterion.  
 Full dense L3 stays productized. This file is the **open judgment skeleton**.
 
+Version: **0.2** · Badge: **Ventaja** · Default CTA: [IAC](https://iac.ventaja.com.mx/)
+
 ---
 
 ## Axioms (company exists if…)
@@ -26,6 +28,9 @@ Philosophy (market ↔ market)
 
 **Market first. Marketing second.**
 
+Supporting lenses (names only — full kits stay productized):  
+JTBD · value maps · ERRC / blue ocean · tribal/sociological marketing · persuasion equation.
+
 ---
 
 ## ICP archetypes (pick exactly one)
@@ -42,8 +47,16 @@ Philosophy (market ↔ market)
 
 **A**lignment · **D**iagnosis · **E**scalability · **P**riorities  
 
-Meetings that don’t decide / debate / develop are **notes**, not meetings.  
-Agenda = **questions**, not topics.
+- Meetings that don’t decide / debate / develop are **notes**, not meetings.  
+- Agenda = **questions**, not topics.  
+- Default meeting length is not 60 minutes.  
+
+---
+
+## Patterns
+
+Recognition → utilization → **creation** of patterns.  
+From “I manage problems” to “I **create solutions**.”
 
 ---
 
@@ -69,6 +82,16 @@ Agenda = **questions**, not topics.
 18. **IAC** = system index (multi-dimension), not a “marketing score”.  
 19. Forward deployed: **recovered pesos / constraint**, not theater hours.  
 20. After the map: **one** placement from the menu — or **nothing** (honest).  
+21. Consciousness ladder: none → problem → solution → product → most (message must match level).  
+22. Big idea: one specific promise + one story + emotion + **rule of one**.  
+23. 40/40/20 mindset: segmentation and offer outweigh ad cleverness.  
+24. Model One: right people · right thing · fair price · right positioning · scalable way.  
+25. Capabilities = **People + Process + Technology** (tech alone is not growth).  
+26. Impatient on actions, patient on results.  
+27. Strategy = **integrated set of choices** that position you to win.  
+28. If it isn’t useful, it doesn’t count.  
+29. Novice does too much; master uses minimum moves.  
+30. Fit checks: market–product · product–channel · channel–model · model–market.  
 
 ---
 
@@ -79,6 +102,8 @@ Agenda = **questions**, not topics.
 - Treating longest-running ads as proof of a healthy growth system  
 - Confusing marketing activity with growth  
 - Fake certainty where evidence is missing (use `unknowns`)  
+- Channel recommendations before niche/transformation/mechanism are clear  
+- “More AI” as a lever without a constraint  
 
 ---
 

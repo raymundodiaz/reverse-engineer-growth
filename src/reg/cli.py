@@ -123,8 +123,22 @@ def _scorecard(h1: list[str], h2: list[str], ctas: list[str], title: str) -> dic
     }
 
 
-def _lever_draft(icp: str, focus_status: str, h1: str) -> dict:
+def _lever_draft(icp: str, focus_status: str, h1: str, h2: list[str], title: str) -> dict:
     """Conservative open harness — human must confirm."""
+    blob = " ".join([title, h1] + h2).lower()
+    feature_first = any(
+        w in blob
+        for w in (
+            "plataforma",
+            "software",
+            "inteligencia artificial",
+            "nuestro agente",
+            "features",
+            "dashboard",
+            "la mejor ia",
+        )
+    ) and not any(w in (h1 or "").lower() for w in ("¿", "problema", "pierdes", "cuesta", "estanc"))
+
     if focus_status == "weak":
         return {
             "lever": "Entry door diluted: too many offers/CTAs compete before one growth constraint is named.",
@@ -137,17 +151,29 @@ def _lever_draft(icp: str, focus_status: str, h1: str) -> dict:
             "confidence": "low-medium",
             "rule": "IF multi-CTA/menu heavy THEN focus/offer-clarity lever",
         }
+    if feature_first:
+        return {
+            "lever": "Offer order may be inverted: product/AI/features lead before clear problem→promise→proof for the economic buyer.",
+            "not_this": "More feature pages or ‘AI’ claims without a sharper constraint story.",
+            "yes_this": "Re-sequence Solution→Benefit→Result→Product; match buyer consciousness level.",
+            "anti_moves": [
+                "Lead with stack/tools before the pain and mechanism.",
+                "Channel spend before niche/transformation/mechanism are clear.",
+            ],
+            "confidence": "low",
+            "rule": "IF feature-first narrative THEN offer-order lever",
+        }
     if icp == "system":
         return {
             "lever": "Growth likely constrained by system clarity (process/governance/offer mechanism) more than raw awareness — validate with IAC + human map.",
             "not_this": "Another loose tactic pack (CRM/ads/course) without naming the bottleneck.",
-            "yes_this": "Diagnose the dominant constraint; sequence three moves max.",
+            "yes_this": "Diagnose the dominant constraint; sequence three system moves max.",
             "anti_moves": ["Pitch a full marketing stack before diagnosis."],
             "confidence": "low",
             "rule": "system archetype default — human confirm",
         }
     return {
-        "lever": f"Insufficient automatic certainty. Public headline signal: {h1[:120] or 'n/a'}. Run IAC + human lever map.",
+        "lever": f"Insufficient automatic certainty. Public headline signal: {(h1 or title)[:120]}. Run IAC + human lever map.",
         "not_this": "Pretending a full growth audit from a homepage scrape.",
         "yes_this": "Collect system evidence; name one constraint with a human in the loop.",
         "anti_moves": ["Ship a 10-tactic PDF from thin public data."],
@@ -177,7 +203,7 @@ def _write_run(out_dir: Path, payload: dict) -> None:
     cta_label = payload["cta"]["label"]
     readout = f"""# Growth readout — {payload['brand']}
 
-<sub>Reverse Engineer Growth v0.1 · Ventaja · MIT · {payload['generated']} · confidence lever: **{L['confidence']}**</sub>
+<sub>Reverse Engineer Growth v0.2 · Ventaja · MIT · {payload['generated']} · confidence lever: **{L['confidence']}**</sub>
 
 **ICP archetype (proxy):** `{payload['icp']['code']}` — {payload['icp']['note']}
 
@@ -248,7 +274,7 @@ Paid lever audit / diagnosis is a separate product when a decider is present.
         json.dumps(
             {
                 "tool": "reverse-engineer-growth",
-                "version": "0.1.0",
+                "version": "0.2.0",
                 "badge": "Ventaja",
                 "cta": payload["cta"],
                 "input": payload["input"],
@@ -285,7 +311,7 @@ def run(url: str, out_root: Path) -> Path:
 
     icp_code, icp_note = _guess_icp(title, p.h1, p.h2, len(html))
     score = _scorecard(p.h1, p.h2, p.ctas, title)
-    lever = _lever_draft(icp_code, score["focus_vs_menu"]["status"], p.h1[0] if p.h1 else title)
+    lever = _lever_draft(icp_code, score["focus_vs_menu"]["status"], p.h1[0] if p.h1 else "", p.h2, title)
 
     import os
 
